@@ -1,0 +1,1455 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>公孙离教程精选训练手册</title>
+  <meta name="description" content="精选公孙离官方资料、图文教程和视频教学，整理成可执行的王者荣耀公孙离训练手册。">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #101113;
+      --panel: #181a1f;
+      --panel-2: #202228;
+      --line: rgba(255, 255, 255, 0.12);
+      --text: #f3f1e9;
+      --muted: #b7b2a6;
+      --soft: #7f796d;
+      --accent: #ffcf4d;
+      --accent-2: #f16842;
+      --ink: #111113;
+      --radius: 8px;
+      --shadow: 0 28px 90px rgba(0, 0, 0, 0.38);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background:
+        linear-gradient(135deg, rgba(255, 207, 77, 0.13), transparent 32%),
+        linear-gradient(245deg, rgba(241, 104, 66, 0.18), transparent 30%),
+        var(--bg);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .page-shell {
+      overflow: hidden;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(16, 17, 19, 0.84);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-inner {
+      width: min(1180px, calc(100% - 32px));
+      height: 68px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 207, 77, 0.55);
+      border-radius: 50%;
+      color: var(--ink);
+      background: var(--accent);
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-links a,
+    .source-link,
+    .hero-link,
+    .watch-link {
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 9px 14px;
+      color: var(--text);
+      text-decoration: none;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover,
+    .source-link:hover,
+    .hero-link:hover,
+    .watch-link:hover {
+      transform: translateY(-1px);
+      border-color: rgba(255, 207, 77, 0.62);
+      background: rgba(255, 207, 77, 0.08);
+    }
+
+    .hero {
+      width: min(1180px, calc(100% - 32px));
+      min-height: calc(100dvh - 68px);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
+      align-items: center;
+      gap: 42px;
+      padding: 44px 0 34px;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    h1 {
+      max-width: 680px;
+      margin: 0;
+      font-size: clamp(42px, 8vw, 92px);
+      line-height: 0.95;
+      letter-spacing: 0;
+    }
+
+    .hero-subtitle {
+      max-width: 590px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: clamp(17px, 2.2vw, 21px);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .hero-link.primary,
+    .watch-link.primary {
+      border-color: transparent;
+      color: var(--ink);
+      background: var(--accent);
+      font-weight: 900;
+      box-shadow: 0 16px 50px rgba(255, 207, 77, 0.22);
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 34px;
+      max-width: 620px;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--accent);
+      font-size: 24px;
+      line-height: 1.1;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .hero-art {
+      position: relative;
+      min-height: 620px;
+      align-self: stretch;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .hero-art::before {
+      content: "";
+      position: absolute;
+      inset: 10% 0 4%;
+      border: 1px solid rgba(255, 207, 77, 0.18);
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 54% 34%, rgba(255, 207, 77, 0.24), transparent 32%),
+        radial-gradient(circle at 40% 70%, rgba(241, 104, 66, 0.18), transparent 32%);
+      filter: blur(0.2px);
+    }
+
+    .hero-art img {
+      position: relative;
+      width: min(600px, 100%);
+      max-height: 86dvh;
+      object-fit: contain;
+      filter: drop-shadow(0 34px 54px rgba(0, 0, 0, 0.62));
+    }
+
+    .section {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 72px 0;
+    }
+
+    .section-header {
+      max-width: 780px;
+      margin-bottom: 28px;
+    }
+
+    .section-kicker {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(30px, 4.8vw, 56px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .section-header p {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .source-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 240px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      background: rgba(24, 26, 31, 0.82);
+      box-shadow: var(--shadow);
+    }
+
+    .source-type {
+      width: fit-content;
+      border: 1px solid rgba(255, 207, 77, 0.38);
+      border-radius: var(--radius);
+      padding: 4px 8px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .source-card h3 {
+      margin: 18px 0 10px;
+      font-size: 22px;
+      line-height: 1.18;
+    }
+
+    .source-card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    .source-link {
+      margin-top: auto;
+      width: fit-content;
+    }
+
+    .manual {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.22fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .manual-aside {
+      position: sticky;
+      top: 92px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      background: var(--panel);
+    }
+
+    .manual-aside img {
+      width: 96px;
+      height: 96px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 207, 77, 0.38);
+      object-fit: cover;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 6px 9px;
+      color: var(--muted);
+      font-size: 13px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .manual-aside h3,
+    .step-card h3,
+    .video-card h3,
+    .practice-card h3 {
+      margin: 18px 0 8px;
+      font-size: 24px;
+      line-height: 1.15;
+    }
+
+    .manual-aside p,
+    .step-card p,
+    .video-card p,
+    .practice-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .step-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .step-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      background: linear-gradient(135deg, rgba(255, 207, 77, 0.06), rgba(255, 255, 255, 0.035));
+    }
+
+    .step-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .step-number {
+      flex: 0 0 auto;
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--ink);
+      background: var(--accent);
+      font-weight: 900;
+    }
+
+    .step-card ul,
+    .practice-card ul {
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 9px;
+      color: var(--muted);
+    }
+
+    .step-card li,
+    .practice-card li {
+      display: grid;
+      grid-template-columns: 16px 1fr;
+      gap: 8px;
+    }
+
+    .step-card li::before,
+    .practice-card li::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      margin-top: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .build-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .build-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      background: linear-gradient(135deg, rgba(255, 207, 77, 0.07), rgba(24, 26, 31, 0.86));
+      box-shadow: var(--shadow);
+    }
+
+    .build-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .build-card h3,
+    .swap-card h3 {
+      margin: 0 0 6px;
+      font-size: 24px;
+      line-height: 1.14;
+    }
+
+    .build-card p,
+    .swap-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .build-badge {
+      flex: 0 0 auto;
+      border-radius: var(--radius);
+      padding: 5px 8px;
+      color: var(--ink);
+      background: var(--accent);
+      font-size: 12px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .gear-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0 0;
+    }
+
+    .gear-item {
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: var(--radius);
+      padding: 7px 9px;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.05);
+      font-size: 14px;
+    }
+
+    .build-detail {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .build-row {
+      border-top: 1px solid var(--line);
+      padding-top: 10px;
+    }
+
+    .build-row strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--accent);
+      font-size: 14px;
+    }
+
+    .build-row span {
+      color: var(--muted);
+    }
+
+    .swap-board {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .swap-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .matchup-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .filter-btn {
+      min-height: 38px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 8px 12px;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+      font: inherit;
+      cursor: pointer;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.is-active {
+      transform: translateY(-1px);
+      border-color: rgba(255, 207, 77, 0.62);
+      color: var(--ink);
+      background: var(--accent);
+    }
+
+    .matchup-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .matchup-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      background: rgba(24, 26, 31, 0.84);
+      box-shadow: var(--shadow);
+    }
+
+    .matchup-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .matchup-card h3 {
+      margin: 0 0 6px;
+      font-size: 25px;
+      line-height: 1.12;
+    }
+
+    .matchup-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .matchup-badge {
+      flex: 0 0 auto;
+      border-radius: var(--radius);
+      padding: 5px 8px;
+      color: var(--ink);
+      background: var(--accent);
+      font-size: 12px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .matchup-blocks {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .matchup-block {
+      border-top: 1px solid var(--line);
+      padding-top: 10px;
+    }
+
+    .matchup-block strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--accent);
+      font-size: 14px;
+    }
+
+    .matchup-block span {
+      color: var(--muted);
+    }
+
+    .matchup-note {
+      margin-top: 16px;
+      border: 1px solid rgba(255, 207, 77, 0.26);
+      border-radius: var(--radius);
+      padding: 12px;
+      color: var(--text);
+      background: rgba(255, 207, 77, 0.07);
+    }
+
+    .video-card {
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .video-thumb {
+      min-height: 126px;
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      color: var(--ink);
+      background:
+        linear-gradient(135deg, rgba(255, 207, 77, 0.92), rgba(241, 104, 66, 0.88)),
+        var(--accent);
+      font-size: 48px;
+      font-weight: 900;
+    }
+
+    .video-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .video-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+      color: var(--soft);
+      font-size: 13px;
+    }
+
+    .watch-link {
+      width: fit-content;
+      margin-top: auto;
+    }
+
+    .practice-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .practice-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      background: rgba(24, 26, 31, 0.82);
+    }
+
+    .day {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--ink);
+      background: var(--accent);
+      font-weight: 900;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 44px;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 560ms ease, transform 560ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .nav-inner {
+        width: min(100% - 24px, 1180px);
+      }
+
+      .brand span:last-child {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        padding-top: 42px;
+      }
+
+      .hero-art {
+        min-height: 420px;
+        order: -1;
+      }
+
+      .hero-art img {
+        max-height: 460px;
+      }
+
+      .source-grid,
+      .build-grid,
+      .video-grid,
+      .matchup-grid,
+      .swap-board,
+      .practice-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .manual {
+        grid-template-columns: 1fr;
+      }
+
+      .manual-aside {
+        position: static;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .nav-links a {
+        padding-inline: 11px;
+        font-size: 14px;
+      }
+
+      .hero,
+      .section,
+      .footer-inner {
+        width: min(100% - 24px, 1180px);
+      }
+
+      .hero-meta,
+      .source-grid,
+      .build-grid,
+      .video-grid,
+      .matchup-grid,
+      .swap-board,
+      .practice-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-art {
+        min-height: 310px;
+      }
+
+      .hero-art img {
+        max-height: 330px;
+      }
+
+      .section {
+        padding: 54px 0;
+      }
+
+      .source-card,
+      .video-card {
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <nav class="nav" aria-label="页面导航">
+      <div class="nav-inner">
+        <a class="brand" href="#top" aria-label="回到顶部">
+          <span class="brand-mark">离</span>
+          <span>公孙离训练手册</span>
+        </a>
+        <div class="nav-links">
+          <a href="#sources">教程源</a>
+          <a href="#manual">打法拆解</a>
+          <a href="#matchups">对线库</a>
+          <a href="#builds">出装铭文</a>
+          <a href="#videos">视频精选</a>
+          <a href="#practice">练习路线</a>
+        </div>
+      </div>
+    </nav>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">王者荣耀 · 射手 · 位移拉扯型核心</p>
+          <h1>把公孙离从“会飞”练到“能赢”。</h1>
+          <p class="hero-subtitle">我把网上常被玩家引用的公孙离教程整理成一页：官方机制、基础连招、出装铭文、对线思路和进阶拉扯路线。</p>
+          <div class="hero-actions">
+            <a class="hero-link primary" href="#videos">看精选教程</a>
+            <a class="hero-link" href="#practice">直接开始练</a>
+          </div>
+          <div class="hero-meta" aria-label="训练重点">
+            <div class="metric">
+              <strong>3</strong>
+              <span>阶段打法</span>
+            </div>
+            <div class="metric">
+              <strong>5</strong>
+              <span>高价值教程源</span>
+            </div>
+            <div class="metric">
+              <strong>7天</strong>
+              <span>练习路线</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-art reveal" aria-label="公孙离角色图">
+          <img src="https://game.gtimg.cn/images/yxzj/img201606/skin/hero-info/199/199-bigskin-1.jpg" alt="王者荣耀公孙离角色立绘">
+        </div>
+      </section>
+
+      <section class="section" id="sources">
+        <div class="section-header reveal">
+          <p class="section-kicker">资料来源</p>
+          <h2>先把可信教程摆到桌面上。</h2>
+          <p>这些链接覆盖了官方英雄资料、图文攻略和视频教学。页面里的结论是基于这些来源重新整理，不替代原作者的完整讲解。</p>
+        </div>
+        <div class="source-grid">
+          <article class="source-card reveal">
+            <span class="source-type">官方资料</span>
+            <h3>王者荣耀官网英雄资料</h3>
+            <p>适合确认技能文本、定位和英雄基础信息，练英雄前先从这里校准机制。</p>
+            <a class="source-link" href="https://pvp.qq.com/web201605/herodetail/gongsunli.shtml" target="_blank" rel="noreferrer">打开官方页</a>
+          </article>
+          <article class="source-card reveal">
+            <span class="source-type">腾讯游戏学院</span>
+            <h3>阿离幻舞玲珑基础教学</h3>
+            <p>偏基础向，讲技能使用、团战切入和新手最容易忽略的生存逻辑。</p>
+            <a class="source-link" href="https://pvp.qq.com/act/a20170829yxxy/newsdetail.shtml?tid=176811" target="_blank" rel="noreferrer">打开图文教程</a>
+          </article>
+          <article class="source-card reveal">
+            <span class="source-type">图文攻略</span>
+            <h3>技能详解与进阶技巧</h3>
+            <p>搜狐游戏的公孙离攻略，适合拿来补连招、技能理解和细节清单。</p>
+            <a class="source-link" href="https://www.sohu.com/a/387209193_100204787" target="_blank" rel="noreferrer">打开攻略</a>
+          </article>
+          <article class="source-card reveal">
+            <span class="source-type">视频合集</span>
+            <h3>B 站公孙离教学检索</h3>
+            <p>B 站上有大量国服、职业和绝活哥视角，建议按发布时间和版本筛选。</p>
+            <a class="source-link" href="https://search.bilibili.com/all?keyword=%E5%85%AC%E5%AD%99%E7%A6%BB%20%E6%95%99%E5%AD%A6" target="_blank" rel="noreferrer">打开搜索</a>
+          </article>
+          <article class="source-card reveal">
+            <span class="source-type">出装铭文</span>
+            <h3>近期出装铭文检索</h3>
+            <p>版本改动会影响装备优先级，排位前可以用这个入口对照最新热门方案。</p>
+            <a class="source-link" href="https://www.baidu.com/s?wd=%E5%85%AC%E5%AD%99%E7%A6%BB%20%E5%87%BA%E8%A3%85%20%E9%93%AD%E6%96%87%202026" target="_blank" rel="noreferrer">打开检索</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="manual">
+        <div class="section-header reveal">
+          <p class="section-kicker">打法拆解</p>
+          <h2>公孙离不是拼手速，她拼的是伞的位置。</h2>
+          <p>新手常把她练成乱飞射手。真正稳定的阿离，是每一次位移前都知道伞在哪里、回伞后站在哪里、谁能立刻摸到自己。</p>
+        </div>
+        <div class="manual">
+          <aside class="manual-aside reveal">
+            <img src="https://game.gtimg.cn/images/yxzj/img201606/heroimg/199/199.jpg" alt="公孙离头像">
+            <h3>核心记忆点</h3>
+            <p>技能放出去不是结束，伞落点才是你的第二个站位。每一次追击、撤退、骗技能，都围绕“现身点”和“回伞点”做选择。</p>
+            <div class="tag-list" aria-label="关键词">
+              <span class="tag">伞位管理</span>
+              <span class="tag">普攻穿插</span>
+              <span class="tag">对线换血</span>
+              <span class="tag">团战边缘</span>
+              <span class="tag">净化时机</span>
+            </div>
+          </aside>
+
+          <div class="step-list">
+            <article class="step-card reveal">
+              <div class="step-top">
+                <div>
+                  <h3>入门：别急着秀，先保证每次回伞都有意义</h3>
+                  <p>适合 0 到 20 场练习，目标是减少无效位移。</p>
+                </div>
+                <span class="step-number">1</span>
+              </div>
+              <ul>
+                <li>一技能只做两件事：安全补伤害，或者拉出敌方技能范围。</li>
+                <li>二技能先当防守技能练，挡关键飞行物比多打一下更值。</li>
+                <li>大招不要只想着推人，更多时候用来重置距离和改伞位。</li>
+              </ul>
+            </article>
+
+            <article class="step-card reveal">
+              <div class="step-top">
+                <div>
+                  <h3>进阶：用普攻节奏决定连招，而不是背死顺序</h3>
+                  <p>适合能稳定活下来的玩家，开始练压制力。</p>
+                </div>
+                <span class="step-number">2</span>
+              </div>
+              <ul>
+                <li>每段位移后先确认普攻距离，能 A 到再交下一段技能。</li>
+                <li>对线期重点不是单杀，而是用被动印记逼对手少吃线。</li>
+                <li>被刺客盯住时，保留一个回伞点，不把三段位移一次打光。</li>
+              </ul>
+            </article>
+
+            <article class="step-card reveal">
+              <div class="step-top">
+                <div>
+                  <h3>高阶：团战只吃边缘收益，不站中心赌操作</h3>
+                  <p>适合已经熟悉技能范围，想提高胜率的玩家。</p>
+                </div>
+                <span class="step-number">3</span>
+              </div>
+              <ul>
+                <li>开团前把自己放在侧翼，让前排和地形替你承担第一波控制。</li>
+                <li>看到关键控制交掉再进场，先打最近的人，不强行越过前排找 C 位。</li>
+                <li>优势局多带线牵制，劣势局少单独探草，阿离最怕先手视野丢失。</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="matchups">
+        <div class="section-header reveal">
+          <p class="section-kicker">发育路对线库</p>
+          <h2>遇到谁，就按谁的技能节奏打。</h2>
+          <p>下面是公孙离常见射手对位的实战处理。版本数值会变，但大多数对线逻辑稳定：先看对方关键技能，再决定你的一技能和二技能是进攻还是保命。</p>
+        </div>
+
+        <div class="matchup-tools reveal" aria-label="对线筛选">
+          <button class="filter-btn is-active" type="button" data-filter="all">全部</button>
+          <button class="filter-btn" type="button" data-filter="good">优势</button>
+          <button class="filter-btn" type="button" data-filter="even">均势</button>
+          <button class="filter-btn" type="button" data-filter="hard">劣势</button>
+          <button class="filter-btn" type="button" data-filter="special">特殊处理</button>
+        </div>
+
+        <div class="matchup-grid">
+          <article class="matchup-card reveal" data-matchup="good">
+            <div class="matchup-head">
+              <div>
+                <h3>马可波罗</h3>
+                <p>你机动性不怕他，但别白吃一技能叠被动。</p>
+              </div>
+              <span class="matchup-badge">优势</span>
+            </div>
+            <div class="matchup-blocks">
+              <div class="matchup-block"><strong>开局</strong><span>抢线时站兵线侧面，不和小兵排成一条线。马可一技能扫兵时，用一技能横向拉开再回头补 A。</span></div>
+              <div class="matchup-block"><strong>换血</strong><span>他一技能空掉或被你二技能挡掉，就是你前压窗口。先 A 出被动层数，再一技能追 A，不要把二技能先交掉。</span></div>
+              <div class="matchup-block"><strong>关键点</strong><span>看到他大招贴脸，不要原地拼。大招推开或回伞拉断距离，等他转完再反打。</span></div>
+            </div>
+            <div class="matchup-note">赢法：用位移让他一技能命中率下降，他没被动就很难打穿你。</div>
+          </article>
+
+          <article class="matchup-card reveal" data-matchup="even">
+            <div class="matchup-head">
+              <div>
+                <h3>孙尚香</h3>
+                <p>她爆发高，你拉扯强，谁先骗掉位移谁赢。</p>
+              </div>
+              <span class="matchup-badge">均势</span>
+            </div>
+            <div class="matchup-blocks">
+              <div class="matchup-block"><strong>开局</strong><span>别站太靠前吃翻滚强化普攻。她一技能清线后有短暂真空期，你再压上去点人。</span></div>
+              <div class="matchup-block"><strong>换血</strong><span>她翻滚后如果没有命中你，立刻一技能进场打两下。你二技能不要乱开，留给她二技能减甲后的爆发段。</span></div>
+              <div class="matchup-block"><strong>关键点</strong><span>草丛边永远当她在蹲。没有辅助视野时别用一技能探草，阿离被先手爆一下会很难操作。</span></div>
+            </div>
+            <div class="matchup-note">赢法：别吃第一枪，抓她翻滚落点。</div>
+          </article>
+
+          <article class="matchup-card reveal" data-matchup="hard special">
+            <div class="matchup-head">
+              <div>
+                <h3>虞姬</h3>
+                <p>二技能免物伤会让你一套输出打空。</p>
+              </div>
+              <span class="matchup-badge">劣势</span>
+            </div>
+            <div class="matchup-blocks">
+              <div class="matchup-block"><strong>开局</strong><span>一级别硬换到底。她一技能消耗距离远，你用兵线和走位逼她清线，不要被白打血量。</span></div>
+              <div class="matchup-block"><strong>换血</strong><span>先用普攻假压，骗出虞姬二技能后立刻后撤。二技能结束再回伞或一技能二段进场补伤害。</span></div>
+              <div class="matchup-block"><strong>关键点</strong><span>她大招踩脸时，你要提前留伞位。别在她二技能持续期间交全部技能追杀。</span></div>
+            </div>
+            <div class="matchup-note">赢法：打她二技能冷却，不打她二技能持续时间。</div>
+          </article>
+
+          <article class="matchup-card reveal" data-matchup="even special">
+            <div class="matchup-head">
+              <div>
+                <h3>狄仁杰</h3>
+                <p>线权强、解控强，别把控制当核心赢点。</p>
+              </div>
+              <span class="matchup-badge">均势</span>
+            </div>
+            <div class="matchup-blocks">
+              <div class="matchup-block"><strong>开局</strong><span>他清线快，别为了抢线吃满红牌和强化普攻。先保血量，再等辅助或河道机会。</span></div>
+              <div class="matchup-block"><strong>换血</strong><span>用一技能躲他的黄牌方向，打短换血就走。他二技能能解负面效果，所以别指望队友一个控就能稳杀。</span></div>
+              <div class="matchup-block"><strong>关键点</strong><span>狄仁杰大招命中后你会很脆，被标到要立刻回伞或交净化，别继续站撸。</span></div>
+            </div>
+            <div class="matchup-note">赢法：短换血、躲黄牌、别吃大招后硬打。</div>
+          </article>
+
+          <article class="matchup-card reveal" data-matchup="hard">
+            <div class="matchup-head">
+              <div>
+                <h3>伽罗</h3>
+                <p>她手长，你要么快速贴近，要么耐心等队友。</p>
+              </div>
+              <span class="matchup-badge">劣势</span>
+            </div>
+            <div class="matchup-blocks">
+              <div class="matchup-block"><strong>开局</strong><span>前两波别被长手一直白点。宁愿少 A 一下兵，也要保持血量，等四级或辅助先手。</span></div>
+              <div class="matchup-block"><strong>换血</strong><span>她没位移，真正能打的是你能贴到脸的时候。一技能进场前先确认她辅助位置，不要穿过兵线硬冲。</span></div>
+              <div class="matchup-block"><strong>关键点</strong><span>中后期不要从正面走过去。绕侧边、卡草、等她交闪现或被队友逼走位。</span></div>
+            </div>
+            <div class="matchup-note">赢法：前期忍，抓她没位移和没视野。</div>
+          </article>
+
+          <article class="matchup-card reveal" data-matchup="good">
+            <div class="matchup-head">
+              <div>
+                <h3>鲁班七号</h3>
+                <p>站桩输出猛，但非常怕你侧向切入。</p>
+              </div>
+              <span class="matchup-badge">优势</span>
+            </div>
+            <div class="matchup-blocks">
+              <div class="matchup-block"><strong>开局</strong><span>别站兵线后面吃扫射。等他被动扫完，立刻一技能侧面贴近打短换血。</span></div>
+              <div class="matchup-block"><strong>换血</strong><span>二技能可以挡他的导弹和部分飞行物。挡掉关键消耗后，他没有位移，很怕你连续普攻叠印记。</span></div>
+              <div class="matchup-block"><strong>关键点</strong><span>注意鲁班身边辅助。没有看到张飞、太乙、鲁大这类保护时再进场。</span></div>
+            </div>
+            <div class="matchup-note">赢法：躲扫射，侧面进，别撞保护辅助。</div>
+          </article>
+
+          <article class="matchup-card reveal" data-matchup="good">
+            <div class="matchup-head">
+              <div>
+                <h3>后羿</h3>
+                <p>没有位移，怕你反复进出射程。</p>
+              </div>
+              <span class="matchup-badge">优势</span>
+            </div>
+            <div class="matchup-blocks">
+              <div class="matchup-block"><strong>开局</strong><span>不要和他开一技能后的持续普攻硬站撸。用一技能打一轮就回，不给他叠满输出时间。</span></div>
+              <div class="matchup-block"><strong>换血</strong><span>他二技能或大招空掉后，你可以大胆前压。二技能留给大鸟或关键减速，别拿来补一点小伤害。</span></div>
+              <div class="matchup-block"><strong>关键点</strong><span>后羿最强的是持续输出和大招先手。你只打短爆发，永远不要在同一位置站太久。</span></div>
+            </div>
+            <div class="matchup-note">赢法：短打短撤，让他持续输出启动不起来。</div>
+          </article>
+
+          <article class="matchup-card reveal" data-matchup="hard">
+            <div class="matchup-head">
+              <div>
+                <h3>百里守约</h3>
+                <p>对线不舒服，核心是少给狙击角度。</p>
+              </div>
+              <span class="matchup-badge">劣势</span>
+            </div>
+            <div class="matchup-blocks">
+              <div class="matchup-block"><strong>开局</strong><span>上线先看他一技能视野可能放在哪。别站直线补兵，补刀时用小幅横向走位。</span></div>
+              <div class="matchup-block"><strong>换血</strong><span>他二技能空掉一枪后，才考虑一技能贴近。贴近后别追太深，他大招后跳会把你带进敌方支援区。</span></div>
+              <div class="matchup-block"><strong>关键点</strong><span>有兵线就用兵线挡枪，没有视野不要过河道。你输的往往不是对拼，是先被狙残。</span></div>
+            </div>
+            <div class="matchup-note">赢法：横向走位、清视野、等他空枪。</div>
+          </article>
+
+          <article class="matchup-card reveal" data-matchup="even">
+            <div class="matchup-head">
+              <div>
+                <h3>李元芳</h3>
+                <p>爆发来自标记，别让他完整打满。</p>
+              </div>
+              <span class="matchup-badge">均势</span>
+            </div>
+            <div class="matchup-blocks">
+              <div class="matchup-block"><strong>开局</strong><span>他一级挂标记很凶，被挂后别硬拼。用一技能拉开，让他少打层数。</span></div>
+              <div class="matchup-block"><strong>换血</strong><span>他二技能交掉后再追，别先把位移全交在他的滚动无敌上。标记快爆时优先回伞保血。</span></div>
+              <div class="matchup-block"><strong>关键点</strong><span>注意草丛蹲人和快速拿龙节奏。你对线没崩，也要及时报他的消失。</span></div>
+            </div>
+            <div class="matchup-note">赢法：不吃满标记，抓他二技能冷却。</div>
+          </article>
+
+          <article class="matchup-card reveal" data-matchup="even">
+            <div class="matchup-head">
+              <div>
+                <h3>黄忠</h3>
+                <p>前期可压，四级后别从正面闯炮台。</p>
+              </div>
+              <span class="matchup-badge">均势</span>
+            </div>
+            <div class="matchup-blocks">
+              <div class="matchup-block"><strong>开局</strong><span>四级前用机动性压他血量，逼他不敢舒服清线。别踩雷区和草里视野。</span></div>
+              <div class="matchup-block"><strong>换血</strong><span>他架炮后不要急着冲。先等队友控制或从侧面进，进场后用大招推位置，再回伞撤出炮圈。</span></div>
+              <div class="matchup-block"><strong>关键点</strong><span>黄忠越到后期越需要队友一起处理。你单人正面切炮台，很容易被辅助反控。</span></div>
+            </div>
+            <div class="matchup-note">赢法：四级前压，四级后绕侧等配合。</div>
+          </article>
+
+          <article class="matchup-card reveal" data-matchup="hard special">
+            <div class="matchup-head">
+              <div>
+                <h3>戈娅</h3>
+                <p>拉扯和移速都强，别被她风筝反打。</p>
+              </div>
+              <span class="matchup-badge">劣势</span>
+            </div>
+            <div class="matchup-blocks">
+              <div class="matchup-block"><strong>开局</strong><span>不要追着她跑。她边走边打能力强，你追深了会被兵线和辅助一起消耗。</span></div>
+              <div class="matchup-block"><strong>换血</strong><span>用一技能切她回头路线，而不是追她当前位置。她大招或减速区域出现时，先回伞脱离。</span></div>
+              <div class="matchup-block"><strong>关键点</strong><span>戈娅强在持续风筝，你要打短窗口。没有净化或伞位时，不主动进她控制区域。</span></div>
+            </div>
+            <div class="matchup-note">赢法：切退路，打短刀，别被拖进长换血。</div>
+          </article>
+
+          <article class="matchup-card reveal" data-matchup="good">
+            <div class="matchup-head">
+              <div>
+                <h3>蒙犽</h3>
+                <p>火力猛但笨重，你能用位移断他的输出角度。</p>
+              </div>
+              <span class="matchup-badge">优势</span>
+            </div>
+            <div class="matchup-blocks">
+              <div class="matchup-block"><strong>开局</strong><span>不要正面吃满扫射。站侧面补兵，等他能量和一技能节奏断掉再压。</span></div>
+              <div class="matchup-block"><strong>换血</strong><span>他一技能扫射方向固定时，你一技能横移到侧面打。二技能留给飞弹压力大的时候。</span></div>
+              <div class="matchup-block"><strong>关键点</strong><span>蒙犽打团范围伤害强，你别站队友旁边一起吃大招和扫射。</span></div>
+            </div>
+            <div class="matchup-note">赢法：避开正面弹道，从侧翼打。</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="builds">
+        <div class="section-header reveal">
+          <p class="section-kicker">出装铭文</p>
+          <h2>别死背一套，按对面阵容换。</h2>
+          <p>公孙离的装备核心是攻速、暴击、续航和保命。下面四套可以覆盖大多数排位局，具体顺序要看你对线压力、对面前排厚度和刺客威胁。</p>
+        </div>
+
+        <div class="build-grid">
+          <article class="build-card reveal">
+            <div class="build-head">
+              <div>
+                <h3>稳定上分通用套</h3>
+                <p>适合大多数发育路对局，前中期手感舒服，容错也够。</p>
+              </div>
+              <span class="build-badge">默认</span>
+            </div>
+            <div class="gear-line" aria-label="装备顺序">
+              <span class="gear-item">急速战靴</span>
+              <span class="gear-item">末世</span>
+              <span class="gear-item">影刃</span>
+              <span class="gear-item">无尽战刃</span>
+              <span class="gear-item">破晓</span>
+              <span class="gear-item">逐日之弓</span>
+            </div>
+            <div class="build-detail">
+              <div class="build-row"><strong>铭文</strong><span>红月 7 + 祸源 3，鹰眼 10，狩猎 7 + 夺萃 3。</span></div>
+              <div class="build-row"><strong>召唤师技能</strong><span>优先净化。对面控制很少、你想强打线权时可考虑狂暴。</span></div>
+              <div class="build-row"><strong>打法</strong><span>末世出来后开始主动换血，影刃和无尽成型后打团找侧翼。逐日之弓用于拉长安全输出距离。</span></div>
+            </div>
+          </article>
+
+          <article class="build-card reveal">
+            <div class="build-head">
+              <div>
+                <h3>打肉前排穿透套</h3>
+                <p>对面双前排、坦边加肉辅，或者你总是只能先打前排。</p>
+              </div>
+              <span class="build-badge">打坦克</span>
+            </div>
+            <div class="gear-line" aria-label="装备顺序">
+              <span class="gear-item">急速战靴</span>
+              <span class="gear-item">末世</span>
+              <span class="gear-item">影刃</span>
+              <span class="gear-item">无尽战刃</span>
+              <span class="gear-item">破晓</span>
+              <span class="gear-item">泣血之刃</span>
+            </div>
+            <div class="build-detail">
+              <div class="build-row"><strong>铭文</strong><span>红月 5 + 祸源 5，鹰眼 10，狩猎 5 + 夺萃 5。</span></div>
+              <div class="build-row"><strong>召唤师技能</strong><span>净化为主。被前排强开频繁时，活着比多打伤害重要。</span></div>
+              <div class="build-row"><strong>打法</strong><span>不要执着绕后切 C。对面前排顶脸时，你就用末世和破晓先处理最近目标，靠续航打第二轮。</span></div>
+            </div>
+          </article>
+
+          <article class="build-card reveal">
+            <div class="build-head">
+              <div>
+                <h3>保命容错套</h3>
+                <p>对面兰陵王、镜、澜、宫本、火舞这类先手多，或者己方保护少。</p>
+              </div>
+              <span class="build-badge">抗刺客</span>
+            </div>
+            <div class="gear-line" aria-label="装备顺序">
+              <span class="gear-item">急速战靴</span>
+              <span class="gear-item">末世</span>
+              <span class="gear-item">影刃</span>
+              <span class="gear-item">无尽战刃</span>
+              <span class="gear-item">破晓</span>
+              <span class="gear-item">贤者的庇护</span>
+            </div>
+            <div class="build-detail">
+              <div class="build-row"><strong>铭文</strong><span>红月 7 + 祸源 3，鹰眼 10，狩猎 6 + 夺萃 4。</span></div>
+              <div class="build-row"><strong>召唤师技能</strong><span>净化。对面宫本、火舞、鬼谷子、张良这类控制链多时不要贪狂暴。</span></div>
+              <div class="build-row"><strong>打法</strong><span>第五件后先补复活甲或名刀组件，团战站得更靠后。你活到第二波技能，比第一波多 A 两下更关键。</span></div>
+            </div>
+          </article>
+
+          <article class="build-card reveal">
+            <div class="build-head">
+              <div>
+                <h3>顺风压制推塔套</h3>
+                <p>你前期拿到线权和经济优势，需要扩大节奏、压塔、转线。</p>
+              </div>
+              <span class="build-badge">顺风</span>
+            </div>
+            <div class="gear-line" aria-label="装备顺序">
+              <span class="gear-item">急速战靴</span>
+              <span class="gear-item">末世</span>
+              <span class="gear-item">影刃</span>
+              <span class="gear-item">逐日之弓</span>
+              <span class="gear-item">无尽战刃</span>
+              <span class="gear-item">破晓</span>
+            </div>
+            <div class="build-detail">
+              <div class="build-row"><strong>铭文</strong><span>红月 10，鹰眼 10，狩猎 7 + 夺萃 3。</span></div>
+              <div class="build-row"><strong>召唤师技能</strong><span>净化稳，狂暴凶。只有你确认对面控制少、辅助能保你时再带狂暴。</span></div>
+              <div class="build-row"><strong>打法</strong><span>逐日提前做出来后，利用射程差压塔点人。别因为顺风就越塔秀，阿离最怕优势送第一波大节奏。</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="swap-board reveal" aria-label="临场换装规则">
+          <article class="swap-card">
+            <h3>鞋子怎么换</h3>
+            <p>控制链很重时，把急速战靴换抵抗之靴。伤害会低一点，但净化冷却期间更不容易被秒。</p>
+          </article>
+          <article class="swap-card">
+            <h3>最后一格怎么换</h3>
+            <p>顺风逐日压射程，缺续航补泣血，怕刺客做贤者的庇护，复活甲用完再换名刀司命。</p>
+          </article>
+          <article class="swap-card">
+            <h3>铭文怎么微调</h3>
+            <p>手感慢就多红月和狩猎，对线消耗重就多夺萃。新手优先保续航，不要为了极限伤害牺牲容错。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="videos">
+        <div class="section-header reveal">
+          <p class="section-kicker">视频精选</p>
+          <h2>三类视频，按你的水平挑。</h2>
+          <p>我没有把页面做成一堆播放器，因为教程经常更新。这里给的是更稳的检索入口和学习顺序，点开后优先看最新版本、高播放和评论区有复盘讨论的视频。</p>
+        </div>
+        <div class="video-grid">
+          <article class="video-card reveal">
+            <div class="video-thumb">0</div>
+            <div class="video-body">
+              <div class="video-meta">
+                <span>入门</span>
+                <span>基础连招</span>
+              </div>
+              <h3>0 基础公孙离教学</h3>
+              <p>适合先解决“技能怎么飞、为什么飞完就死”的问题。重点看伞位、普攻穿插和基础出装。</p>
+              <a class="watch-link primary" href="https://search.bilibili.com/all?keyword=%E5%85%AC%E5%AD%99%E7%A6%BB%200%E5%9F%BA%E7%A1%80%20%E6%95%99%E5%AD%A6" target="_blank" rel="noreferrer">去 B 站看</a>
+            </div>
+          </article>
+          <article class="video-card reveal">
+            <div class="video-thumb">A</div>
+            <div class="video-body">
+              <div class="video-meta">
+                <span>进阶</span>
+                <span>国服思路</span>
+              </div>
+              <h3>国服公孙离细节教学</h3>
+              <p>适合已经会技能但胜率不稳的阶段。重点看对线换血、刷钱路线、什么时候该带线。</p>
+              <a class="watch-link primary" href="https://search.bilibili.com/all?keyword=%E5%9B%BD%E6%9C%8D%E5%85%AC%E5%AD%99%E7%A6%BB%20%E6%95%99%E5%AD%A6" target="_blank" rel="noreferrer">去 B 站看</a>
+            </div>
+          </article>
+          <article class="video-card reveal">
+            <div class="video-thumb">K</div>
+            <div class="video-body">
+              <div class="video-meta">
+                <span>高阶</span>
+                <span>职业视角</span>
+              </div>
+              <h3>职业公孙离团战复盘</h3>
+              <p>适合看站位选择和输出窗口。不要只学连招，重点看他为什么这波不进、下一波才进。</p>
+              <a class="watch-link primary" href="https://search.bilibili.com/all?keyword=%E8%81%8C%E4%B8%9A%E5%85%AC%E5%AD%99%E7%A6%BB%20%E5%A4%8D%E7%9B%98%20%E6%A2%A6%E5%B2%9A" target="_blank" rel="noreferrer">去 B 站看</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="practice">
+        <div class="section-header reveal">
+          <p class="section-kicker">练习路线</p>
+          <h2>一周只练四件事。</h2>
+          <p>公孙离的上手成本高，最怕今天学连招、明天学出装、后天学花活。下面这条路线把注意力收窄，练完再去排位会稳很多。</p>
+        </div>
+        <div class="practice-strip">
+          <article class="practice-card reveal">
+            <span class="day">1</span>
+            <h3>伞位</h3>
+            <p>训练营 20 分钟，只练一技能出伞和回伞。</p>
+            <ul>
+              <li>每次位移后说出回伞点。</li>
+              <li>用墙体和草丛练安全回撤。</li>
+            </ul>
+          </article>
+          <article class="practice-card reveal">
+            <span class="day">2</span>
+            <h3>二技能</h3>
+            <p>匹配局只盯飞行物和控制前摇。</p>
+            <ul>
+              <li>少用二技能补伤害。</li>
+              <li>优先挡关键技能。</li>
+            </ul>
+          </article>
+          <article class="practice-card reveal">
+            <span class="day">3</span>
+            <h3>对线</h3>
+            <p>练清线、换血和河道视野节奏。</p>
+            <ul>
+              <li>先保证补刀和血量。</li>
+              <li>有被动层数再压人。</li>
+            </ul>
+          </article>
+          <article class="practice-card reveal">
+            <span class="day">4</span>
+            <h3>团战</h3>
+            <p>只从侧翼和边缘进场，不急着穿人群。</p>
+            <ul>
+              <li>等第一波控制交掉。</li>
+              <li>先打最近可安全输出目标。</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <span>整理时间：2026-06-28</span>
+        <span>资料会随版本变化，排位前建议再看一眼最新出装和铭文。</span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+
+    const filterButtons = document.querySelectorAll("[data-filter]");
+    const matchupCards = document.querySelectorAll("[data-matchup]");
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+
+        filterButtons.forEach((item) => item.classList.remove("is-active"));
+        button.classList.add("is-active");
+
+        matchupCards.forEach((card) => {
+          const tags = card.dataset.matchup.split(" ");
+          const shouldShow = filter === "all" || tags.includes(filter);
+          card.hidden = !shouldShow;
+        });
+      });
+    });
+  </script>
+</body>
+</html>
